@@ -1,0 +1,35 @@
+@use '../declarations.scss' as *;
+.noi-dung .danh-muc-noi-bat {
+  @include frame(
+    $height: 340px,
+    $padding: 16px,
+    $background: white,
+    $border-radius: 5px,
+    $box-sizing: border-box
+  );
+  .tieu-de {
+    font-size: 15pt;
+    font-weight: normal;
+  }
+  .cac-danh-muc {
+    li {
+      width: 10%;
+      @include padding-between(0, 10px);
+      margin-top: 28px;
+      box-sizing: border-box;
+    }
+    .danh-muc {
+      align-items: center;
+      text-align: center;
+      .phan-hinh {
+        @include frame(60px, 60px, $border-radius: 16px);
+        margin-bottom: 16px;
+      }
+      .phan-chu {
+        font-size: 10pt;
+        line-height: 1.5;
+        @include line-limit(2);
+      }
+    }
+  }
+}

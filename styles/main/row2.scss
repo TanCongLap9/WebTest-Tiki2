@@ -1,0 +1,80 @@
+@use '../declarations.scss' as *;
+.noi-dung .row2 {
+  height: 274px;
+  > * {
+    @include margin-between(0, 8px);
+  }
+}
+.noi-dung .gia-soc-hom-nay {
+  width: 60%;
+  background: white;
+  padding: 12px 8px 18px 12px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  @keyframes flicker {
+    0% {
+      @include frame(100%, 100%);
+      opacity: 1;
+    }
+    50% {
+      @include frame(125%, 125%);
+      opacity: 0.25;
+    }
+  }
+  .khung-tieu-de {
+    align-items: center;
+    .phan-hinh {
+      margin-top: 2px;
+      .flicker-box {
+        display: inline-block;
+        position: relative;
+        @include frame(21px, 28px);
+      }
+      .flicker {
+        @include middle-center();
+        //animation: flicker 0.75s linear infinite;
+      }
+    }
+    .xem-them {
+      color: #1a94ff;
+      margin-right: 9px;
+    }
+  }
+  .cac-danh-muc {
+    height: 188px;
+    @include prev-next-btn-style2;
+    .list-item {
+      @include margin-between(0, 6px);
+      white-space: nowrap;
+      .hinh-san-pham {
+        @include frame(124px, 124px);
+      }
+      .khung-gia-thanh {
+        margin: 12px 0 10px 0;
+      }
+    }
+  }
+}
+.noi-dung .banner-5-items {
+  width: 40%;
+  .viewport {
+    border-radius: 4px;
+  }
+  .list-item {
+    img,
+    video {
+      @include frame(100%, 100%);
+    }
+    img:hover {
+      filter: brightness(95%);
+    }
+  }
+  @include page-selection-style1 {
+    .page-selection {
+      bottom: 16px;
+    }
+    .page-button {
+      @include frame(14px, 14px, $background: #ab9bfa, $margin: 0 6px);
+    }
+  }
+}

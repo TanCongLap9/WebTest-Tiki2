@@ -1,0 +1,160 @@
+@mixin frame(
+  $width: null,
+  $height: null,
+  $background: null,
+  $padding: null,
+  $border: null,
+  $margin: null,
+  $border-radius: null,
+  $box-sizing: null
+) {
+  width: $width;
+  height: $height;
+  background: $background;
+  padding: $padding;
+  border: $border;
+  margin: $margin;
+  border-radius: $border-radius;
+  box-sizing: $box-sizing;
+}
+
+/* Theme */
+$tiki-price-sale: #ff424e;
+$tiki-price-sale-bg: #fff0f1;
+$tiki-price: black;
+$tiki-blue: #1a94ff;
+@mixin tiki-sale-box {
+  border: 1px solid $tiki-price-sale;
+  background: $tiki-price-sale-bg;
+  color: $tiki-price-sale;
+  padding: 0 1px;
+  border-radius: 2px;
+  font-size: 10pt;
+}
+/// Nút tiến, nút lùi màu trắng trên nền đen
+@mixin prev-next-btn-style1 {
+  .viewport:hover {
+    .prev-btn,
+    .next-btn {
+      opacity: 0.5;
+    }
+  }
+  .prev-btn,
+  .next-btn {
+    @include frame(
+      32px,
+      56px,
+      $background: black,
+      $padding: 12px 8px,
+      $box-sizing: border-box
+    );
+    color: white;
+    opacity: 0.25;
+    .icon {
+      @include frame(100%, 100%);
+    }
+  }
+  .prev-btn {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .next-btn {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  @content;
+}
+/// Nút tiến, nút lùi tròn màu đen trên nền trắng
+@mixin prev-next-btn-style2 {
+  .next-btn,
+  .prev-btn {
+    @include frame(
+      24px,
+      24px,
+      $background: white,
+      $padding: 3px,
+      $border: 1px solid lightgray,
+      $border-radius: 50%,
+      $box-sizing: border-box
+    );
+    .icon {
+      color: darkgray;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @content;
+}
+/// Nút trang màu xám, khi chọn có màu trắng
+@mixin page-selection-style1 {
+  .page-selection {
+    bottom: 10px;
+  }
+  .page-button {
+    background: white;
+    opacity: 50%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+  }
+  .selected {
+    opacity: 100%;
+  }
+  @content;
+}
+
+/// Căn giữa theo chiều ngang và chiều dọc
+/// Phần tử mẹ phải có ``position: relative``
+@mixin middle-center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+/// Căn giữa theo chiều dọc
+/// Phần tử mẹ phải có ``position: relative``
+@mixin middle {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+/// Căn giữa theo chiều ngang
+/// Phần tử mẹ phải có ``position: relative``
+@mixin center {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+}
+/// Áp dụng lề cho các phần tử con sao cho cách đều nhau
+@mixin margin-between($vertical: 0, $horizontal: 0) {
+  margin: $vertical $horizontal;
+  &:first-child {
+    margin-left: if($horizontal != 0, 0, null);
+    margin-top: if($vertical != 0, 0, null);
+  }
+  &:last-child {
+    margin-right: if($horizontal != 0, 0, null);
+    margin-bottom: if($vertical != 0, 0, null);
+  }
+}
+/// Áp dụng đệm cho các phần tử con sao cho cách đều nhau
+@mixin padding-between($vertical: 0, $horizontal: 0) {
+  padding: $vertical $horizontal;
+  &:first-child {
+    padding-left: if($horizontal != 0, 0, null);
+    padding-top: if($vertical != 0, 0, null);
+  }
+  &:last-child {
+    padding-right: if($horizontal != 0, 0, null);
+    padding-bottom: if($vertical != 0, 0, null);
+  }
+}
+/// Giới hạn số dòng văn bản
+@mixin line-limit($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

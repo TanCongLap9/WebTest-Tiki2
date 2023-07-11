@@ -1,0 +1,81 @@
+@use '../declarations.scss' as *;
+.footer {
+  background: white;
+}
+.footer {
+  line-height: 1.5;
+  p,
+  h3 {
+    color: #808089;
+  }
+  h3 {
+    font-size: 11pt;
+    margin: 18px 0 12px 0;
+  }
+  h2 {
+    font-size: 13pt;
+    margin-bottom: 16px;
+  }
+  font-size: 10pt;
+  a {
+    color: #1a94ff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  hr {
+    border: 1px solid #ebebf0;
+  }
+}
+.footer .row1 {
+  > * {
+    width: 20%;
+  }
+  a {
+    color: #808089;
+  }
+  padding: 20px 0 28px 0;
+  .phuong-thuc-thanh-toan {
+    .cac-phuong-thuc {
+      width: 190px;
+      > * {
+        width: 20%;
+        height: 20%;
+      }
+    }
+  }
+  .ket-noi-voi-chung-toi {
+    li {
+      @include margin-between(0, 5px);
+    }
+  }
+}
+.footer .ho-tro-khach-hang,
+.footer .ve-tiki,
+.footer .hop-tac-va-lien-ket {
+  margin-bottom: 30px;
+  li {
+    @include margin-between(2px, 0);
+  }
+}
+.footer .thong-tin-tiki {
+  padding: 20px 0;
+  line-height: 1.5;
+}
+.footer .uu-diem-tiki {
+  padding: 20px 0;
+}
+.footer .danh-muc-san-pham {
+  padding: 20px 0;
+  a {
+    color: #808089;
+  }
+  .cac-danh-muc {
+    height: 850px;
+    > * {
+      box-sizing: border-box;
+      width: 20%;
+      padding-right: 20px;
+    }
+  }
+}

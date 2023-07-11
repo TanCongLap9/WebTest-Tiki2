@@ -1,0 +1,122 @@
+@use '../declarations.scss' as *;
+.noi-dung .goi-y-hom-nay {
+  .khung-tieu-de {
+    background: white;
+    margin-bottom: 4px;
+    padding: 17px 16px;
+    border-radius: 3px;
+  }
+  .tieu-de {
+    font-size: 15pt;
+    font-weight: normal;
+  }
+  .khung-goi-y {
+    position: sticky;
+    top: 16px;
+    margin-bottom: 4px;
+    z-index: 1;
+  }
+  .cac-goi-y {
+    height: 85px;
+  }
+  .goi-y {
+    height: 85px;
+    background: white;
+    margin: 0 4px 0 0;
+
+    align-items: center;
+    width: 100%;
+    &:last-child {
+      margin-right: 0;
+    }
+    button {
+      border-radius: 3px;
+      border: 1px solid transparent;
+      background: transparent;
+      justify-content: center;
+      box-sizing: border-box;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+    .da-chon {
+      border-color: #1a94ff;
+    }
+    .phan-hinh {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  .cac-san-pham {
+    padding: 12px 12px 16px 12px;
+    background: white;
+    .cot-cac-san-pham {
+      flex-wrap: wrap;
+      > * {
+        width: 16.667%;
+        justify-content: center;
+      }
+    }
+    .san-pham {
+      width: 182px;
+      height: 310px;
+      .phan-hinh {
+        width: 182px;
+        height: 182px;
+        display: block;
+        margin: auto;
+      }
+      .quang-cao {
+        background: #f2f2f2;
+        padding: 2px 4px;
+        display: inline-block;
+        border-radius: 2px;
+        font-size: 6pt;
+      }
+      .ten-san-pham {
+        font-size: 10pt;
+        line-height: 1.5;
+        @include line-limit(2);
+      }
+    }
+    .khung-danh-gia {
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .danh-gia {
+      position: relative;
+      .cac-sao-vang {
+        position: absolute;
+      }
+      .sao-xam {
+        width: 12px;
+        color: lightgray;
+      }
+      .sao-vang {
+        width: 12px;
+        color: gold;
+      }
+    }
+    .da-ban {
+      border-left: 1px solid darkgray;
+      font-size: 8pt;
+      color: darkgray;
+      margin-left: 3px;
+      padding-left: 5px;
+    }
+  }
+  .xem-them {
+    @include frame(
+      240px,
+      33px,
+      $background: white,
+      $border: 1px solid #0d5cb6,
+      $border-radius: 3px,
+      $margin: auto
+    );
+    cursor: pointer;
+    color: #0d5cb6;
+    display: block;
+  }
+}

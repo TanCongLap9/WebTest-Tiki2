@@ -1,0 +1,172 @@
+@use 'sass:math';
+@use '../declarations.scss' as *;
+@keyframes loading-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(45deg);
+  }
+  20% {
+    transform: rotate(-45deg);
+  }
+  30% {
+    transform: rotate(60deg);
+  }
+  40% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  60% {
+    transform: rotate(-90deg);
+  }
+  70% {
+    transform: rotate(180deg);
+  }
+  80% {
+    transform: rotate(-180deg);
+  }
+  90% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.viewport {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  .list {
+    position: absolute;
+    height: 100%;
+    transition: 0.5s ease-out;
+  }
+  .prev-btn,
+  .next-btn {
+    cursor: pointer;
+    @include middle;
+  }
+  .prev-btn {
+    left: 0px;
+  }
+  .next-btn {
+    right: 0px;
+  }
+  .page-selection {
+    @include center;
+  }
+  .page-button {
+    cursor: pointer;
+  }
+}
+.loading-wrapper,
+.error-wrapper {
+  @include frame(100%, 100%, $border: 4px dashed, $box-sizing: border-box);
+}
+.loading-wrapper {
+  border-color: black;
+}
+.error-wrapper {
+  border-color: #f00;
+  background: #fcc;
+}
+.loading,
+.error {
+  @include middle-center();
+  $icon-size: 32px;
+  width: $icon-size;
+  height: $icon-size;
+  position: relative;
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+.loading {
+  .icon {
+    color: black;
+    animation: loading-anim 2s infinite alternate-reverse ease-in-out;
+  }
+}
+.error {
+  $icon-size: 32px;
+  button {
+    cursor: pointer;
+  }
+  .icon {
+    color: red;
+  }
+  .text {
+    visibility: hidden;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: #333;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, math.div($icon-size, 8));
+    transition: 0.5s;
+    white-space: nowrap;
+    text-align: center;
+  }
+  &:hover {
+    .icon {
+      outline: 1px solid red;
+      outline-offset: math.div($icon-size, 8);
+    }
+    .text {
+      visibility: visible;
+      opacity: 0.75;
+    }
+  }
+}
+.khung-gia-thanh {
+  .gia-thanh {
+    font-weight: bold;
+    margin-right: 6px;
+  }
+  .d {
+    text-decoration: underline;
+  }
+  .da-giam {
+    color: $tiki-price-sale;
+  }
+  .giam-gia {
+    display: inline-block;
+    @include tiki-sale-box();
+  }
+}
+.thanh-tong {
+  @include frame(unset, 20px, $border-radius: 10px, $background: #ffaaaf);
+  position: relative;
+  .ban-chay {
+    width: 22px;
+    height: 25px;
+    position: absolute;
+    left: 5px;
+    bottom: 3px;
+  }
+  .thanh-da-ban {
+    @include frame(
+      unset,
+      100%,
+      $border-radius: 10px,
+      $background: $tiki-price-sale
+    );
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .phan-chu {
+    position: absolute;
+    @include middle-center();
+    color: white;
+    font-size: 8pt;
+    white-space: nowrap;
+  }
+}

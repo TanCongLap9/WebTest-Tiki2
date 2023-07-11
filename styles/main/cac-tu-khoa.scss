@@ -1,0 +1,9 @@
+@use '../declarations.scss' as *;
+.noi-dung .cac-tu-khoa {
+  @include frame(100%, $padding: 16px 0, $background: white);
+  white-space: nowrap;
+  .list-item {
+    @include margin-between(0, 8px);
+  }
+  nav {height: 1.2em;}
+}

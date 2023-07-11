@@ -1,0 +1,180 @@
+@use '../declarations.scss' as *;
+@use 'sass:math';
+$link-color: #0d5cb6;
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes fly-in-from-top {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.dang-nhap-wrapper {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+}
+.dang-nhap-cancel-link {
+  width: 100%;
+  height: 100%;
+  background: #000000d0;
+  animation: fade-in 0.5s;
+  cursor: default;
+  position: absolute;
+}
+.dang-nhap {
+  width: 800px;
+  height: 508px;
+  background: white;
+  border-radius: 20px;
+  position: absolute;
+  animation: fade-in 0.5s, fly-in-from-top 0.5s;
+  .login-text {
+    text-align: left;
+  }
+  .login-error {
+    color: red;
+  }
+  .login-success {
+    color: green;
+  }
+  .loading-icon {
+    @keyframes searching {
+      0% {
+        transform: none;
+      }
+      20% {
+        transform: translate(0, -50%);
+      }
+      40% {
+        transform: translate(-50%, 0);
+      }
+      60% {
+        transform: translate(50%, 0);
+      }
+      80% {
+        transform: translate(0, 50%);
+      }
+    }
+    animation: searching 2s infinite;
+  }
+  .tiep-tuc {
+    font-size: 16pt;
+    padding: 12px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ff424e;
+    color: white;
+    transition: filter 0.5s, background-color 0.5s;
+    cursor: pointer;
+    &:hover {
+      filter: brightness(150%);
+    }
+  }
+  .success {
+    background-color: green;
+  }
+  .dang-nhap-header {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .khung-dang-nhap {
+    padding: 40px 45px;
+  }
+  input {
+    font-size: 18pt;
+    margin-bottom: 10px;
+    padding: 12px 0;
+    border: none {
+      bottom: 1px solid darkgray;
+    }
+    outline: none;
+  }
+  .dieu-khoan-su-dung {
+    font-size: 10pt;
+    text-align: left;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .dang-nhap-bang {
+    cursor: pointer;
+  }
+  .khung-dang-nhap {
+    width: 62.5%;
+    text-align: center;
+    .dang-nhap-header {
+      text-align: left;
+    }
+  }
+  .nut-lui {
+    text-align: left;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 26px;
+    .lui-ve {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .khung-mat-khau {
+    position: relative;
+    .hien-mat-khau {
+      cursor: pointer;
+      @include middle;
+      right: 0px;
+      color: $link-color;
+      font-size: 12pt;
+    }
+  }
+  .khung-quen-mat-khau-va-tao-tai-khoan {
+    text-align: left;
+    a {
+      color: $link-color;
+    }
+  }
+  .cac-logo-dang-nhap {
+    margin: 10px 0;
+    > * {
+      @include margin-between(0, 10px);
+    }
+    .logo-dang-nhap {
+      width: 58px;
+      height: 58px;
+    }
+  }
+  .khung-mua-sam {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(136deg, #f0f8ff -1%, #dbeeff 85%);
+    color: #0b74e5;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 37.5%;
+    line-height: 1.5;
+    .mua-sam {
+      font-weight: bold;
+    }
+    .sieu-uu-dai {
+      font-size: 10pt;
+    }
+    .phan-hinh {
+      width: 203px;
+      height: 203px;
+      margin-bottom: 30px;
+    }
+  }
+}

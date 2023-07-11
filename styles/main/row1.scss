@@ -1,0 +1,24 @@
+@use '../declarations.scss' as *;
+.noi-dung .row1 {
+  height: 274px;
+  > * {
+    @include margin-between(0, 4px);
+  }
+}
+.noi-dung .banner-14-trang {
+  @include frame(66.667%);
+  .viewport {
+    border-radius: 3px;
+  }
+  img {
+    @include frame(100%, 100%);
+  }
+  @include prev-next-btn-style1;
+  @include page-selection-style1;
+}
+.noi-dung .hoan-tien-25k-xu {
+  @include frame(33.333%);
+  img {
+    @include frame(100%, 100%, $border-radius: 4px);
+  }
+}

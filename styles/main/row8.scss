@@ -1,0 +1,12 @@
+@use '../declarations.scss' as *;
+.noi-dung .row8 {
+  height: 150px;
+  margin-bottom: 32px;
+  > * {
+    width: 33.333%;
+    @include margin-between(0, 15px);
+  }
+  img {
+    @include frame(100%, 100%, $border-radius: 20px);
+  }
+}

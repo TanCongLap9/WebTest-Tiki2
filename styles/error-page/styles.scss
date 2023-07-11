@@ -1,0 +1,64 @@
+@use '../declarations.scss' as *;
+$window-bg: white;
+$title-bar-bg: $tiki-blue;
+$title-text-color: darkgray;
+$text-color: black;
+$window-buttons-size: 26px;
+.error-window {
+  background-color: $title-bar-bg;
+  @include middle-center;
+  transition: opacity 200ms, transform 200ms;
+  transform: translate(-50%, -50%);
+}
+.error-title-bar {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .error-title-text {
+    padding: 0 5px;
+    color: white;
+    font-weight: bold;
+  }
+  .window-buttons {
+    height: 100%;
+    > * {
+      width: $window-buttons-size;
+      height: $window-buttons-size;
+      background-color: deepskyblue;
+      &:hover {
+        filter: brightness(120%);
+      }
+      &:active {
+        filter: brightness(50%);
+      }
+    }
+    .close-button {
+      background-color: firebrick;
+    }
+  }
+}
+.error-page {
+  background: $window-bg;
+  color: white;
+  padding: 30px;
+  border: 3px solid $title-bar-bg {
+    top: 0px;
+  }
+  .status-code {
+    color: $title-text-color;
+    font-size: 40pt;
+    text-align: center;
+  }
+  .status-text {
+    color: $title-text-color;
+    font-size: 24pt;
+    text-align: center;
+  }
+  .error-desc {
+    color: $text-color;
+    ul {
+      list-style: disc;
+      padding: 0 1em;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@use "../declarations.scss" as *;
+.header {
+  background: #1a94ff;
+  color: white;
+  font-size: 8pt;
+}
+.header .phan-tren {
+  align-items: center;
+  padding-top: 16px;
+}
+.header .phan-duoi {
+  align-items: flex-start;
+  padding-bottom: 12px;
+}
+$kich-thuoc-o-tim-kiem: 600px;
+$kich-thuoc-nut-tim-kiem: 120px;
+$kich-thuoc-phan-tim-kiem: $kich-thuoc-o-tim-kiem + $kich-thuoc-nut-tim-kiem;
+.header .tim-kiem {
+  .o-tim-kiem {
+    border-radius: 3px 0 0 3px;
+    background: white;
+    height: 40px;
+    border: none;
+    padding: 0 12px;
+    width: $kich-thuoc-o-tim-kiem;
+  }
+  .nut-tim-kiem {
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    background: #0d5cb6;
+    height: 40px;
+    border: none;
+    width: $kich-thuoc-nut-tim-kiem;
+    color: white;
+  }
+}
+.header .khung-logo-tren {
+  width: 206px;
+  .logo-tren {
+    height: 40px;
+  }
+}
+.header .khung-logo-duoi {
+  width: 206px;
+  .logo-duoi {
+    height: 12px;
+  }
+}
+.header .cac-tu-khoa-tim-kiem {
+  width: $kich-thuoc-phan-tim-kiem;
+  li {
+    margin-right: 12px;
+  }
+}
+$kich-thuoc-icon: 32px;
+.header .tai-khoan {
+  margin: 0 14px;
+  align-items: flex-end;
+  .phan-hinh {
+    width: $kich-thuoc-icon;
+    height: $kich-thuoc-icon;
+    margin-right: 6px;
+  }
+  .phan-chu {
+    .chu-tai-khoan {
+      margin-top: 3px;
+      font-size: 10pt;
+    }
+  }
+}
+.header .gio-hang {
+  align-items: flex-end;
+  margin-left: 14px;
+  .phan-hinh {
+    position: relative;
+    margin-right: 6px;
+    img {
+      width: $kich-thuoc-icon;
+      height: $kich-thuoc-icon;
+    }
+    .so-luong-hang {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #fdd835;
+      color: black;
+      position: absolute;
+      right: -8px;
+      top: -2px;
+      border-radius: 50%;
+      text-align: center;
+      .phan-chu-so-luong-hang {
+        @include middle-center;
+      }
+    }
+  }
+  .phan-chu {
+    font-size: 10pt;
+  }
+}
+.header .ban-hang {
+  font-size: 10pt;
+  text-decoration: none;
+  background: #53afff;
+  padding: 4px 8px;
+  border-radius: 15px;
+  margin-left: 130px;
+}

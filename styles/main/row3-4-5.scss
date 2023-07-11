@@ -1,0 +1,44 @@
+@use '../declarations.scss' as *;
+.noi-dung .row3 {
+  height: 160px;
+  > * {
+    width: 17%;
+    @include margin-between(0, 8px);
+  }
+  img {
+    @include frame(100%, 100%, $border-radius: 5px);
+  }
+  .center {
+    width: 66%;
+  }
+}
+.noi-dung .row4 {
+  height: 136px;
+  background: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  li {
+    width: 80px;
+    align-items: center;
+    text-align: center;
+    .phan-hinh {
+      @include frame(48px, 48px, $border-radius: 18px);
+      margin-bottom: 12px;
+    }
+    .phan-chu {
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+  }
+}
+.noi-dung .row5 {
+  height: 150px;
+  > * {
+    width: 25%;
+    @include margin-between(0, 10px);
+    img {
+      @include frame(100%, 100%, $border-radius: 20px);
+    }
+  }
+}
